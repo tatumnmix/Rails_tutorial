@@ -8,6 +8,11 @@
 <li>
 <%= link_to(post.title, post_path(post.id)) %>
 <%= link_to '[Edit]',edit_post_path(post.id),class:"command" %>
+<%= link_to '[x]',
+post_path(post.id), 
+method: :delete,
+class:"command",
+data:{confirm: 'Sure?'}%>
 </li>
 <% end %>
 </ul>
