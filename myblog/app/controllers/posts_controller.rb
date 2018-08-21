@@ -9,8 +9,22 @@ class PostsController < ApplicationController
     end
 
     def new
+        
     end
     
-    def created
+    def create
+        #render plain: params[:post].inspect
+        #save
+        #@post = Post.new(params[:post])
+        @post = Post.new(post_params)
+        @post.save
+        #redirect
+        redirect_to posts_path
     end
+    
+    private
+        def post_params
+            params.require(:post).permit(:title,:body)
+        end
+        
 end
