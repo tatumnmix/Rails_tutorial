@@ -7,6 +7,7 @@
 <% @posts.each do |post| %>
 <li>
 <%= link_to(post.title, post_path(post.id)) %>
+<%= post.picture %>
 <%= link_to '[Edit]',edit_post_path(post.id),class:"command" %>
 <%= link_to '[x]',
 post_path(post.id), 
